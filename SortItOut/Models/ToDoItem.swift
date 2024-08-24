@@ -46,3 +46,33 @@ final class ToDoItem: Codable {
         try container.encode(creationDate, forKey: .creationDate)
     }
 }
+
+extension ToDoItem {
+    enum ToDoItemSortDescriptorProvider: String, CaseIterable, Identifiable {
+        case name = "Name"
+        case done = "Done"
+        case dueDate = "Due Date"
+        case creationDate = "Creation Date"
+
+        var id: Self {
+            self
+        }
+
+        func sortDescriptors(order: SortOrder) -> [SortDescriptor<ToDoItem>] {
+            let doneDescriptor = SortDescriptor(\ToDoItem.done, order: order)
+            let dueDateDescriptor = SortDescriptor(\ToDoItem.dueDate, order: order)
+            let nameDescriptor = SortDescriptor(\ToDoItem.name, order: order)
+            let creationDateDescriptor = SortDescriptor(\ToDoItem.creationDate, order: order)
+            switch self {
+            case .name:
+                return [nameDescriptor, doneDescriptor, dueDateDescriptor, creationDateDescriptor]
+            case .done:
+                return [doneDescriptor, dueDateDescriptor, nameDescriptor, creationDateDescriptor]
+            case .dueDate:
+                return [dueDateDescriptor, doneDescriptor, nameDescriptor, creationDateDescriptor]
+            case .creationDate:
+                return [creationDateDescriptor, doneDescriptor, dueDateDescriptor, nameDescriptor]
+            }
+        }
+    }
+}
