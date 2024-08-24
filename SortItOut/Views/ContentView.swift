@@ -5,20 +5,26 @@
 //  Copyright (c) 2024 Aleksander Stojanowski. All rights reserved.
 //
 
+import SwiftData
 import SwiftUI
 
 struct ContentView: View {
+    @Query
+    private var items: [ToDoItem]
+
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationStack {
+            List {
+                ForEach(items) { item in
+                    ToDoItemRow(for: item)
+                }
+            }
+            .navigationTitle("To Do")
         }
-        .padding()
     }
 }
 
 #Preview {
     ContentView()
+        .modelContainer(PreviewModelContainerProvider.shared.modelContainer)
 }
