@@ -19,31 +19,7 @@ struct ContentView: View {
             ToDoItemsListing(sort: sortDescriptorProvider.sortDescriptors(order: sortOrder))
                 .navigationTitle("To Do")
                 .toolbar {
-                    Menu {
-                        ForEach(ToDoItem.ToDoItemSortDescriptorProvider.allCases) { provider in
-                            Button {
-                                withAnimation {
-                                    if provider == sortDescriptorProvider {
-                                        sortOrder = sortOrder == .forward ? .reverse : .forward
-                                    } else {
-                                        sortDescriptorProvider = provider
-                                        sortOrder = .forward
-                                    }
-                                }
-                            } label: {
-                                if provider == sortDescriptorProvider {
-                                    Label(
-                                        provider.rawValue,
-                                        systemImage: sortOrder == .forward ? "arrow.up" : "arrow.down"
-                                    )
-                                } else {
-                                    Text(provider.rawValue)
-                                }
-                            }
-                        }
-                    } label: {
-                        Label("Sort", systemImage: "arrow.left.arrow.right")
-                    }
+                    SortMenu(sortProvider: $sortDescriptorProvider.animation(), sortOrder: $sortOrder.animation())
                 }
         }
     }

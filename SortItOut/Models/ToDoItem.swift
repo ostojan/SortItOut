@@ -48,15 +48,11 @@ final class ToDoItem: Codable {
 }
 
 extension ToDoItem {
-    enum ToDoItemSortDescriptorProvider: String, CaseIterable, Identifiable {
+    enum ToDoItemSortDescriptorProvider: String, SortDescriptorProvider {
         case name = "Name"
         case done = "Done"
         case dueDate = "Due Date"
         case creationDate = "Creation Date"
-
-        var id: Self {
-            self
-        }
 
         func sortDescriptors(order: SortOrder) -> [SortDescriptor<ToDoItem>] {
             let doneDescriptor = SortDescriptor(\ToDoItem.done, order: order)
