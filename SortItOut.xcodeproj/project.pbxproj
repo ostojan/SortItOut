@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D42286BA2C7A18760030123D /* ToDoItemsListing.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42286B92C7A18760030123D /* ToDoItemsListing.swift */; };
+		D42286BD2C7A1B600030123D /* Bool+Comparable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42286BC2C7A1B600030123D /* Bool+Comparable.swift */; };
 		D49721742C7A03DF0019F958 /* SortItOutApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49721732C7A03DF0019F958 /* SortItOutApp.swift */; };
 		D49721762C7A03DF0019F958 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49721752C7A03DF0019F958 /* ContentView.swift */; };
 		D49721782C7A03E00019F958 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D49721772C7A03E00019F958 /* Assets.xcassets */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D42286B92C7A18760030123D /* ToDoItemsListing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoItemsListing.swift; sourceTree = "<group>"; };
+		D42286BC2C7A1B600030123D /* Bool+Comparable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bool+Comparable.swift"; sourceTree = "<group>"; };
 		D49721702C7A03DF0019F958 /* SortItOut.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SortItOut.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D49721732C7A03DF0019F958 /* SortItOutApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortItOutApp.swift; sourceTree = "<group>"; };
 		D49721752C7A03DF0019F958 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -38,6 +42,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D42286BB2C7A1B510030123D /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				D42286BC2C7A1B600030123D /* Bool+Comparable.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		D49721672C7A03DF0019F958 = {
 			isa = PBXGroup;
 			children = (
@@ -58,6 +70,7 @@
 			isa = PBXGroup;
 			children = (
 				D4BE7EA82C7A098100589DCF /* Models */,
+				D42286BB2C7A1B510030123D /* Utils */,
 				D49721832C7A04CE0019F958 /* Views */,
 				D49721732C7A03DF0019F958 /* SortItOutApp.swift */,
 				D49721772C7A03E00019F958 /* Assets.xcassets */,
@@ -104,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				D4BE7EAF2C7A11B300589DCF /* ToDoItemRow.swift */,
+				D42286B92C7A18760030123D /* ToDoItemsListing.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -181,8 +195,10 @@
 				D4BE7EB02C7A11B300589DCF /* ToDoItemRow.swift in Sources */,
 				D49721762C7A03DF0019F958 /* ContentView.swift in Sources */,
 				D49721742C7A03DF0019F958 /* SortItOutApp.swift in Sources */,
+				D42286BA2C7A18760030123D /* ToDoItemsListing.swift in Sources */,
 				D4BE7EAA2C7A09E200589DCF /* ToDoItem.swift in Sources */,
 				D4BE7EAD2C7A0B5000589DCF /* PreviewModelContainerProvider.swift in Sources */,
+				D42286BD2C7A1B600030123D /* Bool+Comparable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,17 +9,10 @@ import SwiftData
 import SwiftUI
 
 struct ContentView: View {
-    @Query
-    private var items: [ToDoItem]
-
     var body: some View {
         NavigationStack {
-            List {
-                ForEach(items) { item in
-                    ToDoItemRow(for: item)
-                }
-            }
-            .navigationTitle("To Do")
+            ToDoItemsListing(sort: [SortDescriptor(\.name)])
+                .navigationTitle("To Do")
         }
     }
 }
